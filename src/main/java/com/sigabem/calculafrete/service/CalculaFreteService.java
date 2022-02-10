@@ -99,6 +99,11 @@ public class CalculaFreteService {
    		repository.save(calculaFreteLog);
    								 
    	}
+    
+    @Transactional
+	public List<CalculaFreteLog> buscaFretes() {
+		return repository.findAll();
+	}
     	
 }
 

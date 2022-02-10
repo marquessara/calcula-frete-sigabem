@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.sigabem.calculafrete.dto.RequestDTO;
 import com.sigabem.calculafrete.dto.ResponseDTO;
+import com.sigabem.calculafrete.model.CalculaFreteLog;
 import com.sigabem.calculafrete.resource.CalculaFreteResource;
 import com.sigabem.calculafrete.service.CalculaFreteService;
 
@@ -42,5 +43,10 @@ public class CalculaFreteController implements CalculaFreteResource {
 
         return ResponseEntity.ok(responseDTO);
     }
+
+	@Override
+	public ResponseEntity<List<CalculaFreteLog>> buscaFretes() {
+		return ResponseEntity.ok(service.buscaFretes());
+	}
 }
 
